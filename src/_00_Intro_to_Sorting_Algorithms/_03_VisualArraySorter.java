@@ -38,22 +38,45 @@ import processing.core.PApplet;
  *     mousePressed variable
  */
 public class _03_VisualArraySorter extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 400;
-
+    static final int WIDTH = 1000;
+    static final int HEIGHT = 1000;
+    int[] array;
     @Override
     public void settings() {
-        
+        size(WIDTH,HEIGHT);
     }
 
     @Override
     public void setup() {
-        
+        array=new int[1000];
+        randomize(array);
+        noStroke();
     }
-
+    public void randomize(int[] array) {
+    	for(int i =0;i<array.length;i++) {
+        	array[i]=(int)random(height);
+        }
+    }
     @Override
     public void draw() {
-        
+        background(74,133,69);
+        for(int i =0;i<array.length;i++) {
+        	//height of 0 would be bluest - 0,0,200
+        	//height of total height would be reddest - 200,0,0
+        	//add to 100
+        	fill(array[i]/4,array[i]/4,array[i]/4);
+        	rect(i*width/array.length,height-array[i],width/array.length,array[i]);
+        	stepSort(array);
+        	/*
+        	 * the x value will be the loop variable multiplied by (width/intArray.length)
+ *    the y value will the height variable
+ *    the width is (width/intArray.length)
+ *    the height is the negative array value at the array index, e.g. -intArray[i]
+        	 */
+        	if(mousePressed) {
+        		randomize(array);
+        	}
+        }
     }
 
     static public void main(String[] passedArgs) {

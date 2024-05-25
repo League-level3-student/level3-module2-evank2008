@@ -34,10 +34,7 @@ class _02_SwappingDigits {
     public static int findMiddle(int[] arr) {
     	int[] array = arr;
     	sortIntArray(array);
-    	if(array.length%2==0) {
-    		return array[array.length/2];
-    	} else {
-    		return array[array.length+1/2];
-    	}
+    	int length = array.length;
+    		return array[length/2];
     }
 }

@@ -11,7 +11,19 @@ public class BubbleSorter extends Sorter{
      * progress on the graph.
      */
     @Override
-    void sort(int[] array, SortingVisualizer display) {
-        
+    void sort(int[] arr, SortingVisualizer display) {
+    	boolean allSorted=false;
+    	while(allSorted==false) {
+    		allSorted=true;
+    	for(int i = 0;i<arr.length-1;i++) {
+    		if(arr[i]>arr[i+1]) {
+    			int temp = arr[i];
+    	    	arr[i]=arr[i+1];
+    	    	arr[i+1]=temp;
+    	    	allSorted=false;
+    		}
+    	}
+    	display.updateDisplay();
+    	}
     }
 }

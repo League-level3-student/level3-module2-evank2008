@@ -13,7 +13,8 @@ class _03_SearchTest {
     @Test
     public void testLinearSearch() {
         // 1. Use the assertEquals() method to test your linear search method
-        assertEquals(false, true);
+    	String[] ar1 = {"peanut","peanut","peanut","peanut","peanut","peanut","peanut","peanut","banana","peanut","peanut","peanut"};
+        assertEquals(8, _01_LinearSearch.linearSearch(ar1, "banana"));
     }
 
     @Test
