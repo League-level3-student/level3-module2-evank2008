@@ -39,6 +39,7 @@ if(end>=start) {
             //    method. Use mid + 1 as the start, and pass in end.
 }
         // 7. return -1 because the value was not found
+		System.out.println("cant find");
         return -1;
     } 
 }
